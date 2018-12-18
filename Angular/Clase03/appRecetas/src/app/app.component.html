@@ -1,27 +1,10 @@
 <div class="container">
-	<div class="row justify-content-center">
-		<div class="col-5">
-			<form>
-				<div class="form-group">
-					<input type="text" class="form-control" placeholder="Titulo" #titulo>
-				</div>
-				<div class="form-group">
-					<textarea cols="30" rows="5" class="form-control" placeholder="Ingredientes" #ingredientes></textarea>
-				</div>
-				<div class="form-group">
-					<textarea cols="30" rows="5" class="form-control" placeholder="Preparacion" #preparacion></textarea>
-				</div>
-				<div class="form-group">
-					<input type="file" class="form-control">
-				</div>
-				<div class="form-group">
-					<input type="text" class="form-control" placeholder="Tiempo (min.)" #tiempo>
-				</div>
-				<div class="form-group">
-					<button type="button" class="btn btn-primary btn-block" (click)="agregarReceta(titulo.value, ingredientes.value, preparacion.value, tiempo.value)">Agregar</button>
-				</div>
-			</form>
-		</div>
-		<div class="col-5"></div>
-	</div>
+  <div class="row justify-content-center">
+    <div class="col-5">
+      <app-form-component (onAgregar)="agregar($event)"></app-form-component>
+    </div>
+    <div class="col-5" *ngIf="recetas.length;else noHayRecetas">
+      <app-listado-component [listadoRecetas]="recetas"></app-listado-component>
+    </div>
+  </div>
 </div>

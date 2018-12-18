@@ -1,0 +1,15 @@
+<table class="table table-bordered">
+  <thead class="thead-dark">
+    <tr *ngFor="let receta of recetas">
+      <td>
+        <img [src]="receta.foto">
+
+
+      </td>
+    </tr>
+  </thead>
+
+</table>
+<ng-template #noHayRecetas>
+  <h3>No hay recetas</h3>
+</ng-template>
