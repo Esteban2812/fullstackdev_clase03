@@ -14,4 +14,11 @@ export class AppComponent {
     this.recetas.push(receta)
   }
 
+  eliminarAlmuerzo(recetasToDelete) {
+    console.log('Elimando almuerzo.')
+    for (let index = 0; index < recetasToDelete.length; index++) {
+      this.recetas.splice(recetasToDelete[index],1)      
+    }
+  }
+
 }

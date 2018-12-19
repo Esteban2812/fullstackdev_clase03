@@ -1,15 +1,25 @@
 <table class="table table-bordered">
   <thead class="thead-dark">
-    <tr *ngFor="let receta of recetas">
+    <tr>
+      <th>Foto</th>
+      <th>Titulo</th>
+      <th>Select</th>
+    </tr>
+    <tr *ngFor="let receta of recetas; let indice=index">
       <td>
-        <img [src]="receta.foto">
-
-
+        <img [src]="receta.foto" style="width:100%;max-width:220px">
+      </td>
+      <td>{{receta.titulo}}</td>
+      <td>
+        <input type="checkbox" [name]="indice" value="true" (click)="getIndexAlmuerzo($event)">
+      </td>
+    </tr>
+    <tr>
+        <td colspan="3" style="text-align: center">
+      <button type="button" class="btn btn-primary btn-block" (click)="eliminarAlmuerzo()">Eliminar</button>
       </td>
     </tr>
   </thead>
 
 </table>
-<ng-template #noHayRecetas>
-  <h3>No hay recetas</h3>
-</ng-template>
+

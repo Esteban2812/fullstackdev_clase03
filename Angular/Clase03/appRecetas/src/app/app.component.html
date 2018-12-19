@@ -4,7 +4,12 @@
       <app-form-component (onAgregar)="agregar($event)"></app-form-component>
     </div>
     <div class="col-5" *ngIf="recetas.length;else noHayRecetas">
-      <app-listado-component [listadoRecetas]="recetas"></app-listado-component>
+      <app-listado-component [listadoRecetas]="recetas" (onEliminar)="eliminarAlmuerzo($event)" >
+      </app-listado-component>
+
     </div>
+    <ng-template #noHayRecetas>
+        <h3>No hay recetas</h3>
+      </ng-template>
   </div>
 </div>

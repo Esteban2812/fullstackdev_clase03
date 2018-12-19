@@ -19,7 +19,7 @@ export class FormComponentComponent implements OnInit {
 
   agregarReceta(titulo: string, ingredientes: string, preparacion: string, tiempo: number) {
 
-    const receta = { titulo, ingredientes, preparacion, tiempo, foto: "" }
+    const receta = { titulo, ingredientes, preparacion, tiempo, foto: this.imagen }
     this.onAgregar.emit(receta)
     //this.recetas.push(receta)
 
